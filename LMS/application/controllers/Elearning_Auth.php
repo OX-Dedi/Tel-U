@@ -2,18 +2,13 @@
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Authentication extends CI_Controller {
+class Elearning_Auth extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-<<<<<<< HEAD
-        $this->load->model('Common_model');
-
-=======
->>>>>>> 8b3af08f6394461baa3ece634bd25d0d80c14724
     }
     
-    function index(){
+    function login_elearn(){
         unset($_SESSION["session_user_id"]);
         unset($_SESSION["session_user_name"]);
         session_destroy();
@@ -23,16 +18,14 @@ class Authentication extends CI_Controller {
     	$this->load->view('login.php', $data);
     }
 
-    function logout(){
+    function logout_elearn(){
         unset($_SESSION["session_user_id"]);
         unset($_SESSION["session_user_name"]);
         session_destroy();
 
         redirect('/');
     }
-
-    function check_autho(){
-
+    function check_elearn(){
         $this->form_validation->set_rules('loginemail', 'loginemail', 'required');
         $this->form_validation->set_rules('loginpassword', 'loginpassword', 'required');
         
@@ -95,7 +88,6 @@ class Authentication extends CI_Controller {
             $data["message"] = "Authentication success. Please wait ...";            	        
             echo json_encode($data);
 	    }    
-
     }
 
     function signup(){

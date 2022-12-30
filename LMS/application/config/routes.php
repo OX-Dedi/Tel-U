@@ -49,11 +49,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'authentication/';
+
 
 $route['default_controller'] = 'home';
 $route['404_override'] = 'err/notfound';
 $route['translate_uri_dashes'] = FALSE;
+
+
+$route['dashboard2'] = 'dashboard/index';
+
 
 //Admin URL
 $route['settingapp'] = 'admin/settingapp';
@@ -70,6 +74,11 @@ $route['kalenderabsen'] = 'user/kalenderabsen';
 //Auth URL
 $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
+$route['Elearning_Auth/check_elearn'] = 'Elearning_Auth/check_elearn';
+$route['Elearning_Auth/login_elearn'] = 'Elearning_Auth/login_elearn';
+
+
+
 
 //Data FIlter URL
 
@@ -78,10 +87,6 @@ $route['Calendar']='calendar/calendar';
 $route['Nilai']='nilai/nilai_view';
 $route['Chart']='morris/trafficbar';
 $route['Users']='laporan/user_view';
-$route['Auth'] = 'authentication/check_autho';
-
-
-
 
 
 //Misc URL

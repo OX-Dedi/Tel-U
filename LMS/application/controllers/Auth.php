@@ -44,4 +44,5 @@ class Auth extends CI_Controller
             $this->M_Auth->do_login();
         }
     }
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2022 at 09:40 AM
+-- Generation Time: Dec 30, 2022 at 10:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -110,9 +110,8 @@ CREATE TABLE `app_user` (
 
 INSERT INTO `app_user` (`id`, `status`, `is_admin`, `user_password`, `email`, `full_name`, `registered_on`) VALUES
 (1, 1, 1, '787f04d4569019803dfb6ab702ab7f26d86969da242628aed42d8a89775fbba34400a1520fd2dcc9a91370735261e93118f0aa58739581bf3bcbb50390d05cb4XGhVM2ALAff0L6jrJK1827w/hbCwTN9eMgl0WeMeQ84=', 'admin@mail.com', 'Dedi Rosadi', '2022-12-28 13:34:14'),
-(2, 1, 0, '1a2b223e73774315c7f5bb2dfe8aa3f75a8332c04a0fcae47d1745f8af5d48395a42b8702646a832f659b5e54010c5516ee8bb934bc57245a5c9fae69c20ccb29jgVaCri2uZ8jkVzpIooYoHu0NmuGHEbZPFqcHt7x08=', 'user1@mail.com', 'User 1', '2020-09-24 14:13:17'),
-(3, 1, 0, 'a1734e1caf3cc66b4786ead575c608cb08b433c8da225a4489309064d68c8824b0b791bba109fca51a806c7eea1c81bc3929d9c1cc579db65c288c74d0324e65I0clwoGrh/D3z5b6ovOEN0bXUQQSVp78G5prJLubqtg=', 'user2@mail.com', 'User 2', '2020-09-24 14:14:03'),
-(8, 1, 0, '8a54d8c89edc050c9a1c745afeaa7f92cad65b2ded4027045ce61fbbcddb2458c522071da70218354135e1a4d8857d40bb0a5a7699debbd397b5922b0dfcfc6aDz7FM/jqDQLUNYWW6ev9v1UiB4gluJ0Iam/3FLQE23Q=', 'tess@mail.com', 'tess', '2022-12-28 10:52:47');
+(2, 1, 0, '1a2b223e73774315c7f5bb2dfe8aa3f75a8332c04a0fcae47d1745f8af5d48395a42b8702646a832f659b5e54010c5516ee8bb934bc57245a5c9fae69c20ccb29jgVaCri2uZ8jkVzpIooYoHu0NmuGHEbZPFqcHt7x08=', 'user1@mail.com', 'User 1', '2022-12-29 14:13:17'),
+(3, 1, 0, 'a1734e1caf3cc66b4786ead575c608cb08b433c8da225a4489309064d68c8824b0b791bba109fca51a806c7eea1c81bc3929d9c1cc579db65c288c74d0324e65I0clwoGrh/D3z5b6ovOEN0bXUQQSVp78G5prJLubqtg=', 'user2@mail.com', 'User 2', '2022-12-29 14:14:03');
 
 -- --------------------------------------------------------
 
@@ -157,11 +156,11 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `name`, `status`) VALUES
-(1, 'Java Basic', 1),
-(2, 'PHP Basic', 1),
-(3, 'HTML Basic', 1),
+(1, 'Java ', 1),
+(2, 'PHP ', 1),
+(3, 'HTML', 1),
 (4, 'Kotlin', 1),
-(5, 'Spring Boot', 1),
+(5, 'Spring Boot', 0),
 (6, 'Codeigniter Framework', 1);
 
 -- --------------------------------------------------------
@@ -288,6 +287,14 @@ CREATE TABLE `evaluation_report` (
   `lesson_id` bigint(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `evaluation_report`
+--
+
+INSERT INTO `evaluation_report` (`id`, `app_user_id`, `given_answer`, `exam_date`, `course_id`, `lesson_id`) VALUES
+(1, 1, '1_0,2_0,3_0,4_0,5_0,6_3,', '2022-12-29 13:55:26', 1, 1),
+(2, 1, '1_4,2_3,3_2,4_1,5_2,6_4,', '2022-12-30 13:27:48', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -309,7 +316,8 @@ INSERT INTO `lesson` (`id`, `name`, `course_id`, `status`) VALUES
 (1, 'Concepts of OOPs', 1, 1),
 (2, 'Character and Boolean Data Types', 1, 1),
 (3, 'Data Structures', 1, 1),
-(4, 'Dasar Kotlin', 4, 1);
+(4, 'Dasar Kotlin', 4, 1),
+(5, 'UI/UX', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -571,7 +579,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_pegawai`, `nama_lengkap`, `username`, `password`, `role_id`, `umur`, `image`, `qr_code_image`, `kode_pegawai`, `instansi`, `jabatan`, `npwp`, `tgl_lahir`, `tempat_lahir`, `jenis_kelamin`, `bagian_shift`, `is_active`, `qr_code_use`, `last_login`, `date_created`) VALUES
-(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672211537, 1670857167),
+(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672367943, 1670857167),
 (47, 'Dedi Rosadi', 'dedi', '$2y$10$XRXong6z3evF2IG41qanPud4..ii8C/0rO/Ypr9f4MAGzS1qbNe6.', 2, 21, '24eba96bab2559d9b4fea156554f1bb1.png', 'qr_code_148296679305713.png', '148296679305713', 'TELKOM UNIVERSITY', '21552011076', '2020', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672192169, 1671366109);
 
 -- --------------------------------------------------------
@@ -765,7 +773,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `app_user`
 --
 ALTER TABLE `app_user`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `calendar`
@@ -801,13 +809,13 @@ ALTER TABLE `db_rememberme`
 -- AUTO_INCREMENT for table `evaluation_report`
 --
 ALTER TABLE `evaluation_report`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `questionnaire`
