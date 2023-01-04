@@ -97,9 +97,19 @@
 	      <th>Total Activiy</th>
 	    </tr>
 	  </thead>
-
+	  <tbody>
+	  <tfoot>
+	    <tr>
+	      <th>Faculty id</th>
+	      <th>Program id</th>
+	      <th>Semester id</th>
+	      <th>Nama</th>
+	      <th>Kelas</th>
+		  <th>Activity</th>
+	      <th>Total Activiy</th>
+	    </tr>
+	  </tfoot>
 	</table>
-
 	<!-- Script -->
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -109,7 +119,7 @@
 	      	'serverMethod': 'post',
 	      	//'searching': false, // Remove default Search Control
 	      	'ajax': {
-	          'url':'<?=base_url()?>index.php/Users/userList',
+	          'url':'<?=base_url()?>Users/userList',
 	          'data': function(data){
 	          		data.searchCity = $('#sel_city').val();
 					data.searchProgram = $('#sel_program').val();
@@ -129,21 +139,13 @@
 	         	{ data: 'kelas' },
 				{ data: 'activity' },
 				{ data: 'total' },
-
 	      	]
 	   	});
 
 	   	$('#sel_semester,#sel_program,#sel_nama,#sel_kelas,#sel_activity,#sel_total').change(function(){
 	   		userDataTable.draw();
 	   	});
-
 	});
 	</script>
 </body>
 </html>
-
-
-
-
-
-

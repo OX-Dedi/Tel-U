@@ -57,10 +57,7 @@ class Model_test extends CI_Controller {
                 $this->load->view('model_test/exam', $data);
             }    
         } 
-
-        
     }
-
     function evaluate(){
         if(!isset($_SESSION)) { 
             session_start();
