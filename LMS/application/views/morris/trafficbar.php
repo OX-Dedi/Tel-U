@@ -5,7 +5,14 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title text-white">Chart</h3>
+            </div>
     <div class="container">
         <div class="row mt-4">
             <div  class="col-12"></div>
@@ -33,22 +40,30 @@
         success: data=>{
             let chartX = []
             let chartY = []
+            let chartY2 = []
     
             data.map( data =>{
-                chartX.push(data.nama)
-                chartY.push(data.total)
+                chartX.push(data.nama);
+                chartY.push(data.total);
+                chartY2.push(data.activity);
             })
     
             const chartData = {
                 labels: chartX,
                 datasets: [
                     {
-                        label: 'total',
+                        label:'total',
                         data: chartY,
                         backgroundColor: ['lightcoral'],
                         borderColor: ['lightcoral'],
                         borderWidth: 4
-                    }
+                    },{
+                        label:'activity',
+                        data: chartY2,
+                        backgroundColor: ['lightcoral'],
+                        borderColor: ['lightcoral'],
+                        borderWidth: 4
+                    },
                 ]
             }
             const ctx = document.getElementById(chartType).getContext('2d')

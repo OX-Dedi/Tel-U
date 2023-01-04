@@ -74,10 +74,8 @@ $route['kalenderabsen'] = 'user/kalenderabsen';
 //Auth URL
 $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
-$route['Elearning_Auth/check_elearn'] = 'Elearning_Auth/check_elearn';
-$route['Elearning_Auth/login_elearn'] = 'Elearning_Auth/login_elearn';
-
-
+$route['masuk'] = 'Login_form';
+$route['masuk1'] = 'index';
 
 
 //Data FIlter URL
@@ -95,3 +93,9 @@ $route['cetak'] = 'docs/print';
 $route['export'] = 'docs/export';
 $route['instantabsen'] = 'absen/instant';
 $route['confirmabsen'] = 'absen/confirmabsen';
+
+//Sistem Pembelajaran Terpadu
+$route['Guru'] = 'Admin_learning/halamanGuru';
+$route['Siswa'] = 'Login';
+$route['Kontrak'] = 'Login';
+$route['Akun'] = 'Login';

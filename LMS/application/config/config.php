@@ -27,6 +27,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 //$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
 //$config['base_url'] = str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 $config['base_url'] ='http://localhost/Push/LMS/public/';
+//$config['base_url'] ='http://localhost/Push/LMS//Auth/masuk';
 
 /*
 |--------------------------------------------------------------------------

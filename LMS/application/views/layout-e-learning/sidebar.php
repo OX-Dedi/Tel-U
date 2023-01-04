@@ -20,9 +20,9 @@
                         <a class="nav-link" href="<?= base_url('Calendar/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-calendar text-white"></span></div>
                             Agenda Perkuliahan
-                        </a><div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
-                        </a><a class="nav-link" href="<?= base_url('Elearning_Auth/login_elearn'); ?>">
-                            <div class="sb-nav-link-icon"><span class="fas fa-cog text-white"></span></div>
+                        </a><div class="sb-sidenav-menu-heading text-white">Course</div>
+                        </a><a class="nav-link" href="<?= base_url('Index/index'); ?>">
+                            <div class="sb-nav-link-icon"><span class="fas fa-search text-white"></span></div>
                             Tes  Course
                           </a>        
                           <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>

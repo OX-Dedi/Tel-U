@@ -108,4 +108,16 @@ class M_Auth extends CI_Model
             redirect('login'); //Mengarahkan otomatis user ke halaman login
         }
     }
+    
+    function get_course_list(){
+        $srt_query = "SELECT id, name FROM course WHERE status = 1 ORDER BY name ASC";
+        $query = $this->db->query($srt_query);
+        return $query->result();
+    }
+
+    function get_lesson_list(){
+        $srt_query = "SELECT id, name FROM lesson WHERE status = 1 ORDER BY name ASC";
+        $query = $this->db->query($srt_query);
+        return $query->result();
+    }
 }

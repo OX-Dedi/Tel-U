@@ -13,11 +13,18 @@
 
 </head>
 <body>
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header bg-danger">
+                <h3 class="card-title text-white">Data Mahasiswa</h3>
+            </div>
 
 	<!-- Search filter -->
 	<div>
-		<!-- filter -->
-<br>
+	<div class="card-body">
 		<select id='sel_program'>
 			<option value=''>-- Select program --</option>
 			<?php 
@@ -76,7 +83,9 @@
 	</div>
 <br>
 	<!-- Table -->
-	<table id='userTable' class='display dataTable'>
+	
+
+	<table id='userTable' class='table table-bordered table-striped display dataTable'>
 
 	  <thead>
 	    <tr>

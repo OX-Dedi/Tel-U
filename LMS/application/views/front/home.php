@@ -66,8 +66,8 @@
                     </div> 
                     </div>
                     <div class="card-body row detail">
+                    <iframe width="950" height="400" src="https://www.youtube.com/embed/L_S6_MfAWmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="col-md-2 col-sm-4 col-6 p-2">
-                    <iframe width="568" height="320" src="https://www.youtube.com/embed/L_S6_MfAWmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     </div>            
                   </div>

@@ -54,7 +54,16 @@
                 </form>
             </div>
         </div>
-        <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Data Mahasiswa</h3>
+            </div>
+        <div class="card-body">
+        <table id="table" class="table table-bordered table-striped" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>No</th>
