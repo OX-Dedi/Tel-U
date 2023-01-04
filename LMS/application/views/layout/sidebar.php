@@ -16,14 +16,14 @@
                             <a class="nav-link" href="<?= base_url('Chart/Index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-chart-area text-white"></span></div>
                             Chart
-                        </a><div class="sb-sidenav-menu-heading text-white">Message</div>
+                        </a>                        <a class="nav-link" href="<?= base_url('absensiku'); ?>">
+                            <div class="sb-nav-link-icon"><span class="fas fa-user text-white"></span></div>
+                            Data Kehadiran
+                        </a>
+                        <div class="sb-sidenav-menu-heading text-white">Message</div>
                         <a class="nav-link" href="https://accounts.google.com/v3/signin/identifier?dsh=S-770772247%3A1664850020142830&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWoMubc8w6A4iEB_pkfRnlH0_XNIWxuidXaGHsDngXFy3ciDYDKyQIXhlSPee8EmbBFBFNT-">
                             <div class="sb-nav-link-icon"><span class="fas fa-envelope text-white"></span></div>
                             MailBox
-                        </a>
-                        <a class="nav-link" href="<?= base_url('absensiku'); ?>">
-                            <div class="sb-nav-link-icon"><span class="fas fa-user text-white"></span></div>
-                            Data Kehadiran
                         </a>
                         <div class="sb-sidenav-menu-heading text-white">Admin</div>
                         <a class="nav-link" href="<?= base_url('datapegawai'); ?>">

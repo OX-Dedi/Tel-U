@@ -3,24 +3,8 @@
 
 <div class="container" id="container">
   <div class="header clearfix">
-    <nav>
-      <ul class="nav nav-pills float-right mt-3">
-        <li class="nav-item">
-          <a class='nav-link' href='<?php echo base_url(); ?>index.php/Index'>BERANDA</a>
-        </li>
-        <li class="nav-item">
-          <a class='nav-link' href='<?php echo base_url(); ?>index.php/Guru/halamanMateri'>MATERI</a>
-        </li>
-        <li class="nav-item">
-          <a class='nav-link active' href='<?php echo base_url(); ?>index.php/Guru/halamanNilai'>NILAI</a>
-        </li>
-        <li class="nav-item logout">
-          <a class="nav-link btn btn-danger" href="<?php echo base_url(); ?>index.php/Login/prosesLogout">LOGOUT</a>
-        </li>
-      </ul>
-    </nav>
     <div class="logo">
-      <img src="<?php echo base_url(); ?>assets/img/title.png">
+    <link rel="shortcut icon" href="http://localhost/Push/LMS/asset/img/logo1.png">
     </div>
   </div>
 <div class="container" id="menu-top">
@@ -113,7 +97,7 @@
             <div class="row">
               <div class="col-6 offset-6 text-right">
                 <?php echo form_submit('submit','Tambah','name="tambah" class="btn btn-info"'); ?>
-                <a href="<?php echo base_url(); ?>index.php/Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
+                <a href="<?php echo base_url(); ?>Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
               </div>
             </div>
           </div>
@@ -223,7 +207,7 @@
             <div class="row">
               <div class="col-6 offset-6 text-right">
                 <?php echo form_submit('submit','Tambah','name="tambah" class="btn btn-info"'); ?>
-                <a href="<?php echo base_url(); ?>index.php/Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
+                <a href="<?php echo base_url(); ?>Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
               </div>
             </div>
           </div>
@@ -333,7 +317,7 @@
             <div class="row">
               <div class="col-6 offset-6 text-right">
                 <?php echo form_submit('submit','Tambah','name="tambah" class="btn btn-info"'); ?>
-                <a href="<?php echo base_url(); ?>index.php/Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
+                <a href="<?php echo base_url(); ?>Admin/halamanSiswa" class="btn btn-secondary">Kembali</a>
               </div>
             </div>
           </div>

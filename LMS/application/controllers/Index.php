@@ -36,7 +36,7 @@ class Index extends CI_Controller{
 			$this->load->view('admin_dashboard', $data);
 			$this->load->view('layout/footer', $data);
 
-		}else if($this->session->userdata('role') == 'guru' && $this->session->userdata('login') == TRUE) {
+}else if($this->session->userdata('role') == 'guru' && $this->session->userdata('login') == TRUE) {
 			$data['title'] = 'POT | Beranda';
 			$data['username'] = $this->session->userdata('username');
 
@@ -46,7 +46,7 @@ class Index extends CI_Controller{
 			$this->load->view('guru_dashboard', $data);
 			$this->load->view('layout/footer', $data);
 
-		}else if($this->session->userdata('role') == 'siswa' && $this->session->userdata('login') == TRUE) {
+}else if($this->session->userdata('role') == 'siswa' && $this->session->userdata('login') == TRUE) {
 			$data['title'] = 'POT | Beranda';
 			$data['username'] = $this->session->userdata('username');
 

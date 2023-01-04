@@ -9,21 +9,18 @@
                             <div class="sb-nav-link-icon"><span class="fas fa-home text-white"></span></div>
                             Beranda
                         </a>
-                        <a class="nav-link" href="<?= base_url('Admin_learning/halamanGuru'); ?>">
+                        <a class="nav-link" href="<?= base_url('Siswa/halamanNilai'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-chart-area text-white"></span></div>
-                            Management Guru
+                            Nilai
                         </a>
-                        <a class="nav-link" href="<?= base_url('Admin_learning/halamanSiswa'); ?>">
+                        <a class="nav-link" href="<?= base_url('Siswa/halamanMateri'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-user-check text-white"></span></div>
-                            Management Siswa
+                            Materi
                         </a>
-                        <a class="nav-link" href="<?= base_url('Admin_learning/halamanKontrak'); ?>">
+                        <a class="nav-link" href="<?= base_url('Siswa/halamanRekap'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-calendar text-white"></span></div>
-                            Kontrak Kuliah
-                        </a><a class="nav-link" href="<?= base_url('Admin_learning/halamanAkun'); ?>">
-                            <div class="sb-nav-link-icon"><span class="fas fa-cog text-white"></span></div>
-                            Management Account
-                          </a>        
+                            Rekap
+                        </a>  
                           <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
                         </a><a class="nav-link" href="<?= base_url('home/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-cog text-white"></span></div>

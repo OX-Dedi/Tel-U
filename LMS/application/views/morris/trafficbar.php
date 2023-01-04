@@ -13,20 +13,45 @@
               <div class="card-header bg-danger">
                 <h3 class="card-title text-white">Chart</h3>
             </div>
+            <br>
     <div class="container">
-        <div class="row mt-4">
-            <div  class="col-12"></div>
-            <canvas id="line" height="200"></canvas>
-</div>
-<div class="row mt-2">
-    <div class="col-8">
+    <div class="card">
+    <div class="card-header bg-danger">
+    <h3 class="card-title text-white">Grafik Garis</h3>
+    </div>
+    <div class="card-body">
+    <div class="row mt-4">
+    <div  class="col-12"></div>
+    <canvas id="line" height="200"></canvas>
+    </div>
+    </div>
+    </div>
+<br>
+    <div class="card">
+     <div class="card-header bg-danger">
+    <h3 class="card-title text-white">Grafik Batang</h3>
+    </div>
+    <div class="card-body">
+    <div class="row mt-2">
+    <div class="col-9">
     <canvas id="bar"></canvas>
     </div>
+    </div>
+    </div>
+    </div>
+<br>
+    <div class="card">
+    <div class="card-header bg-danger">
+    <h3 class="card-title text-white">Grafik Pie</h3>
+    </div>
+    <div class="card-body">
     <div class="col-4">
     <canvas id="pie"></canvas>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
+<br>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">   
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>

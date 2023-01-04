@@ -1,7 +1,7 @@
 <div class="container" id="container">
   <div class="header clearfix">
     <div class="logo">
-      <img src="<?php echo base_url(); ?>assets/img/title.png">
+    <link rel="shortcut icon" href="http://localhost/Push/LMS/asset/img/logo1.png">
     </div>
   </div>
 <div class="container">
@@ -16,7 +16,7 @@
 
         </div>
         <div class="card-footer text-muted">
-          2018 &copy; SPOT. All rights reserved
+          2023 Pembelajaran Online Terpadu
         </div>
       </div>
     </div>

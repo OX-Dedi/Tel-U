@@ -39,6 +39,7 @@ class Calendar extends CI_Controller {
 		$data = array();
 		$data['get_data']			= json_encode($calendar);
 
+		
 		$this->load->view('calendar/calendar', $data);
 
 	}

@@ -81,10 +81,9 @@
 
 		<!-- Name -->
 	</div>
-<br>
 	<!-- Table -->
 	
-
+<div class="card-body">
 	<table id='userTable' class='table table-bordered table-striped display dataTable'>
 
 	  <thead>

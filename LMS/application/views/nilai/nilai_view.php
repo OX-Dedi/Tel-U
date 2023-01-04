@@ -1,4 +1,6 @@
 <div class="container pt-5">
+<div class="card">
+    <div class="card-body">
     <h3><?= $title ?></h3>
 
         </ol>
@@ -13,8 +15,6 @@
                 endif; ?>
             </div>
 
-            <div class="card">
-                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover" id="tableMahasiswa">
                             <thead>

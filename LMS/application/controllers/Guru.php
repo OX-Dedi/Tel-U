@@ -16,8 +16,6 @@ class Guru extends CI_Controller{
         $this->load->model('ModelGuru');
         $this->load->model('ModelSiswa');
         $this->get_datasetupapp = $this->M_Front->fetchsetupapp();
-        $this->table 		=('calendar');
-		  $this->load->model('Globalmodel','modeldb'); 
     }
 
   function index()
