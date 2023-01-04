@@ -13,7 +13,6 @@
     <?php
       foreach ($siswa as $data) {
     ?>
-
       <div class="col-6 pt-4">
       <?php echo form_open('Admin_learning/prosesUbahSiswa'); ?>
         <input type="hidden" name="id" value="<?php echo $data['idSiswa']; ?>">
@@ -34,7 +33,6 @@
                   }else{
                     echo "<option value='$dataKelas[idKelas]'>$dataKelas[namaKelas]</option>";
                   }
-
                 }
               ?>
             </select>
@@ -54,7 +52,6 @@
             <textarea name="alamat" class="form-control"rows="3" required><?php echo $data['alamatSiswa']; ?></textarea>
           </div>
         </div>
-
       </div>
       <div class="col-12 text-right">
         <?php echo form_submit('submit','Ubah',' class="btn btn-info"'); ?>

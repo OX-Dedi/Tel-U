@@ -47,7 +47,6 @@
             <textarea name="alamat" class="form-control"rows="3" required></textarea>
           </div>
         </div>
-
       </div>
       <div class="col-12 text-right">
         <?= form_submit('submit','Tambah','name="tambah" class="btn btn-success"'); ?>

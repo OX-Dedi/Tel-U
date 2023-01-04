@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 04:19 AM
+-- Generation Time: Jan 04, 2023 at 08:56 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -266,7 +266,10 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`idGuru`, `idMapel`, `NIP`, `namaGuru`, `password`, `noHP`, `alamat`) VALUES
-(2, 'FIK-01', '8364583942', 'Guru1', 'Guru123', '087829743123', 'Jl. Cihampelas No.160');
+(2, 'FIK-01', '836458394', 'Guru1', 'Guru123', '087829743123', 'Jl. Cihampelas No.160'),
+(5, 'FIK-02', '982347657', 'Guru2', 'iQtW4M0y', '094758456745', 'Jl.Antapani No.18'),
+(6, 'FIK-03', '834745487', 'Guru3', 'mU42ter8', '094568745675', 'Jl.Seokarno-Hatta No.187'),
+(7, 'FIK-04', '563246722', 'Guru4', 'Tfkn8QtZ', '028495734745', 'Jl.Kiaracondong No.11');
 
 -- --------------------------------------------------------
 
@@ -623,7 +626,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_pegawai`, `nama_lengkap`, `username`, `password`, `role_id`, `umur`, `image`, `qr_code_image`, `kode_pegawai`, `instansi`, `jabatan`, `npwp`, `tgl_lahir`, `tempat_lahir`, `jenis_kelamin`, `bagian_shift`, `is_active`, `qr_code_use`, `last_login`, `date_created`) VALUES
-(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672802215, 1670857167),
+(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672816883, 1670857167),
 (47, 'Dedi Rosadi', 'dedi', '$2y$10$XRXong6z3evF2IG41qanPud4..ii8C/0rO/Ypr9f4MAGzS1qbNe6.', 2, 21, '24eba96bab2559d9b4fea156554f1bb1.png', 'qr_code_148296679305713.png', '148296679305713', 'TELKOM UNIVERSITY', '21552011076', '2020', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672192169, 1671366109);
 
 -- --------------------------------------------------------
@@ -722,7 +725,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `idGuru` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idGuru` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kelas`

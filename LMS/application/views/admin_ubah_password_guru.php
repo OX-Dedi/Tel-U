@@ -13,7 +13,6 @@
     <?php
       foreach ($guru as $data) {
     ?>
-
       <div class="col-6 pt-4">
       <?php echo form_open('Admin_learning/prosesUbahPasswordGuru'); ?>
         <input type="hidden" name="id" value="<?php echo $data['idGuru']; ?>">

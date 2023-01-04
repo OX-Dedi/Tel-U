@@ -1,6 +1,3 @@
-<?php $this->load->view('header_table'); ?>
-
-
 <div class="container" id="container">
   <div class="header clearfix">
     <div class="logo">
@@ -42,7 +39,6 @@
             <?php echo form_upload('userfile'); ?>
           </div>
         </div>
-
       </div>
       <div class="col-6 pt-4">
         <div class="form-group row">
@@ -98,5 +94,4 @@
     </table>
   </div>
 </div>
-
 <?php $this->load->view('footer_table'); ?>

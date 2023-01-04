@@ -14,7 +14,6 @@
         </div>
         <div class="card-body bg-danger">
           <h5 class="card-title text-white">Selamat Datang, <?php echo $username; ?></h5>
-
         </div>
         <div class="card-footer bg-dark text-white">
           2023 Pembelajaran Online Terpadu

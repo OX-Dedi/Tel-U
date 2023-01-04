@@ -7,14 +7,11 @@
   $(document).ready(function(){
     var $cat = $('select[name=idKelas]'),
         $items = $('select[name=idSiswa]');
-
     $cat.change(function(){
         var $this = $(this).find(':selected'),
             rel = $this.attr('rel'),
             $set = $items.find('option.' + rel);
-
         $items.show().find('option').hide();
-
         $set.show().first().prop('selected', true);
     });
   });
@@ -29,12 +26,10 @@
                           var val = $.fn.dataTable.util.escapeRegex(
                               $(this).val()
                           );
-
                           column
                               .search( val ? '^'+val+'$' : '', true, false )
                               .draw();
                       } );
-
                   column.data().unique().sort().each( function ( d, j ) {
                       select.append( '<option value="'+d+'">'+d+'</option>' )
                   } );

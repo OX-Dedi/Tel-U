@@ -1,6 +1,3 @@
-<?php $this->load->view('header_admin'); ?>
-
-
 <div class="container" id="container">
   <div class="header clearfix">
     <div class="logo">
@@ -25,5 +22,4 @@
     </div>
   </div>
 </div>
-
 <?php $this->load->view('footer'); ?>

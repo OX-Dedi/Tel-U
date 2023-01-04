@@ -53,7 +53,6 @@
             <textarea name="alamat" class="form-control"rows="3" required></textarea>
           </div>
         </div>
-
       </div>
       <div class="col-12 text-right">
         <?php echo form_submit('submit','Tambah','name="tambah" class="btn btn-info"'); ?>

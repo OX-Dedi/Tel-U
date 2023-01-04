@@ -13,7 +13,6 @@
     <?php
       foreach ($siswa as $data) {
     ?>
-
       <div class="col-6 pt-4">
       <?php echo form_open('Admin_learning/prosesUbahPasswordSiswa'); ?>
         <input type="hidden" name="id" value="<?php echo $data['idSiswa']; ?>">

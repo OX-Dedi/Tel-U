@@ -20,7 +20,6 @@
           </thead>
           <tbody>
             <?php
-
             if($guru){
               foreach ($guru as $dataGuru) {
             ?>
@@ -49,7 +48,6 @@
           </thead>
           <tbody>
             <?php
-
             if($siswa){
               foreach ($siswa as $dataSiswa) {
             ?>

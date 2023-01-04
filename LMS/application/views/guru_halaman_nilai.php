@@ -1,6 +1,3 @@
-<?php $this->load->view('header_halaman_nilai'); ?>
-
-
 <div class="container" id="container">
   <div class="header clearfix">
     <div class="logo">
@@ -118,7 +115,6 @@
         </thead>
         <tbody>
           <?php
-
           if($harian){
             $i = 1;
             foreach ($harian as $dataHarian) {
@@ -201,7 +197,6 @@
                 <input type="text" class="form-control" name="nilai" id="Nilai" required>
               </div>
             </div>
-
           </div>
           <div class="col-12 header">
             <div class="row">
@@ -228,7 +223,6 @@
         </thead>
         <tbody>
           <?php
-
           if($ulangan){
             $i = 1;
             foreach ($ulangan as $dataUlangan) {
@@ -311,7 +305,6 @@
                 <input type="text" class="form-control" name="nilai" id="Nilai" required>
               </div>
             </div>
-
           </div>
           <div class="col-12 header">
             <div class="row">
@@ -338,7 +331,6 @@
         </thead>
         <tbody>
           <?php
-
           if($uas){
             $i = 1;
             foreach ($uas as $dataUas) {
@@ -357,6 +349,4 @@
       </table>
     </div></div>
 </div>
-
-
 <?php $this->load->view('footer_halaman_nilai'); ?>

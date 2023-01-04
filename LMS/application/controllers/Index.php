@@ -17,7 +17,6 @@ class Index extends CI_Controller{
 	$this->get_datasetupapp = $this->M_Front->fetchsetupapp();
 	}
   
-
   public function index()
   {
 	$data = [
@@ -25,7 +24,6 @@ class Index extends CI_Controller{
 		'user' => $this->get_datasess,
 		'dataapp' => $this->get_datasetupapp
 	];
-
     if($this->session->userdata('role') == 'admin' && $this->session->userdata('login') == TRUE) {
 			$data['title'] = 'POT | Beranda';
 			$data['username'] = $this->session->userdata('username');
@@ -61,6 +59,4 @@ class Index extends CI_Controller{
 			$this->load->view('login_form', $data);
 		}
   }
-
-
 }

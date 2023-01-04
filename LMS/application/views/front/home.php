@@ -58,7 +58,6 @@
                         <div class="text-muted">Akun Dibuat: <?= date('d F Y', $user['date_created']); ?></div>
                     </div>
                 </div></div>
-
             <div class="card ">
                 <div class="card-header text-center bg-danger">
                     <span class="fas fa-user mr-1"></span>Introduction
