@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 10:19 AM
+-- Generation Time: Jan 04, 2023 at 04:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lms_mbkm`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
@@ -55,18 +55,17 @@ INSERT INTO `activity` (`Id`, `NIP`, `Nama`, `Kode_Dosen`, `Course_View`, `Resou
 --
 
 CREATE TABLE `admin` (
-  `users` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `Pembaruhan` datetime NOT NULL
+  `idAdmin` int(10) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`users`, `username`, `password`, `Pembaruhan`) VALUES
-(1, 'admin', 'admin@@', '2019-11-11 03:33:36');
+INSERT INTO `admin` (`idAdmin`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -87,31 +86,6 @@ CREATE TABLE `agenda` (
 
 INSERT INTO `agenda` (`id`, `title`, `start_event`, `end_event`) VALUES
 (1, 'Meeting With Dedi', '2022-10-08 12:00:00', '2022-10-08 13:00:00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `app_user`
---
-
-CREATE TABLE `app_user` (
-  `id` bigint(10) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `is_admin` int(1) NOT NULL DEFAULT 0,
-  `user_password` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `full_name` varchar(200) NOT NULL,
-  `registered_on` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `app_user`
---
-
-INSERT INTO `app_user` (`id`, `status`, `is_admin`, `user_password`, `email`, `full_name`, `registered_on`) VALUES
-(1, 1, 1, '787f04d4569019803dfb6ab702ab7f26d86969da242628aed42d8a89775fbba34400a1520fd2dcc9a91370735261e93118f0aa58739581bf3bcbb50390d05cb4XGhVM2ALAff0L6jrJK1827w/hbCwTN9eMgl0WeMeQ84=', 'admin@mail.com', 'Dedi Rosadi', '2022-12-28 13:34:14'),
-(2, 1, 0, '1a2b223e73774315c7f5bb2dfe8aa3f75a8332c04a0fcae47d1745f8af5d48395a42b8702646a832f659b5e54010c5516ee8bb934bc57245a5c9fae69c20ccb29jgVaCri2uZ8jkVzpIooYoHu0NmuGHEbZPFqcHt7x08=', 'user1@mail.com', 'User 1', '2022-12-29 14:13:17'),
-(3, 1, 0, 'a1734e1caf3cc66b4786ead575c608cb08b433c8da225a4489309064d68c8824b0b791bba109fca51a806c7eea1c81bc3929d9c1cc579db65c288c74d0324e65I0clwoGrh/D3z5b6ovOEN0bXUQQSVp78G5prJLubqtg=', 'user2@mail.com', 'User 2', '2022-12-29 14:14:03');
 
 -- --------------------------------------------------------
 
@@ -224,8 +198,7 @@ CREATE TABLE `db_absensi` (
 --
 
 INSERT INTO `db_absensi` (`id_absen`, `kode_absen`, `nama_pegawai`, `kode_pegawai`, `tgl_absen`, `jam_masuk`, `jam_pulang`, `status_pegawai`, `keterangan_absen`, `maps_absen`) VALUES
-(3, 'absen_20221214445', 'Dedi Rosadi', '20552011053', 'Selasa, 13 Desember 2022', '10:43:10', '19:36:31', 2, 'Belajar Di Kampus', '-6.9244532, 107.6622627'),
-(12, 'absen_20221286321', 'Dedi Rosadi', '973829271834', 'Rabu, 28 Desember 2022', '14:32:02', '', 2, 'Belajar Di Kampus', '-6.9617306, 107.6333816');
+(3, 'absen_20221214445', 'Dedi Rosadi', '20552011053', 'Selasa, 13 Desember 2022', '10:43:10', '19:36:31', 2, 'Belajar Di Kampus', '-6.9244532, 107.6622627');
 
 -- --------------------------------------------------------
 
@@ -275,80 +248,150 @@ INSERT INTO `db_setting` (`status_setting`, `nama_instansi`, `jumbotron_lead_set
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evaluation_report`
+-- Table structure for table `guru`
 --
 
-CREATE TABLE `evaluation_report` (
-  `id` bigint(10) NOT NULL,
-  `app_user_id` bigint(10) NOT NULL DEFAULT 0,
-  `given_answer` varchar(1000) NOT NULL,
-  `exam_date` datetime NOT NULL,
-  `course_id` bigint(10) NOT NULL DEFAULT 0,
-  `lesson_id` bigint(10) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+CREATE TABLE `guru` (
+  `idGuru` int(10) NOT NULL,
+  `idMapel` varchar(10) NOT NULL,
+  `NIP` varchar(30) NOT NULL,
+  `namaGuru` varchar(35) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `noHP` varchar(15) NOT NULL,
+  `alamat` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `evaluation_report`
+-- Dumping data for table `guru`
 --
 
-INSERT INTO `evaluation_report` (`id`, `app_user_id`, `given_answer`, `exam_date`, `course_id`, `lesson_id`) VALUES
-(1, 1, '1_0,2_0,3_0,4_0,5_0,6_3,', '2022-12-29 13:55:26', 1, 1),
-(2, 1, '1_4,2_3,3_2,4_1,5_2,6_4,', '2022-12-30 13:27:48', 1, 1);
+INSERT INTO `guru` (`idGuru`, `idMapel`, `NIP`, `namaGuru`, `password`, `noHP`, `alamat`) VALUES
+(2, 'FIK-01', '8364583942', 'Guru1', 'Guru123', '087829743123', 'Jl. Cihampelas No.160');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lesson`
+-- Table structure for table `kelas`
 --
 
-CREATE TABLE `lesson` (
-  `id` bigint(10) NOT NULL,
-  `name` varchar(500) NOT NULL,
-  `course_id` bigint(10) NOT NULL DEFAULT 0,
-  `status` int(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+CREATE TABLE `kelas` (
+  `idKelas` int(10) NOT NULL,
+  `namaKelas` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `lesson`
+-- Dumping data for table `kelas`
 --
 
-INSERT INTO `lesson` (`id`, `name`, `course_id`, `status`) VALUES
-(1, 'Concepts of OOPs', 1, 1),
-(2, 'Character and Boolean Data Types', 1, 1),
-(3, 'Data Structures', 1, 1),
-(4, 'Dasar Kotlin', 4, 1),
-(5, 'UI/UX', 1, 1);
+INSERT INTO `kelas` (`idKelas`, `namaKelas`) VALUES
+(1, 'FIK-1A'),
+(2, 'FIK-1B'),
+(3, 'FIK-2A'),
+(4, 'FIK-2B'),
+(5, 'FIK-3A'),
+(6, 'FIK-3B'),
+(7, 'FIK-4A'),
+(8, 'FIK-4B');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questionnaire`
+-- Table structure for table `kontrak`
 --
 
-CREATE TABLE `questionnaire` (
-  `id` bigint(10) NOT NULL,
-  `course_id` bigint(10) NOT NULL DEFAULT 0,
-  `lesson_id` bigint(10) NOT NULL DEFAULT 0,
-  `right_answer` int(1) NOT NULL DEFAULT 0,
-  `title` varchar(500) DEFAULT NULL,
-  `answer_1` varchar(500) NOT NULL,
-  `answer_2` varchar(500) NOT NULL,
-  `answer_3` varchar(500) NOT NULL,
-  `answer_4` varchar(500) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+CREATE TABLE `kontrak` (
+  `idKontrak` int(10) NOT NULL,
+  `idKelas` int(10) NOT NULL,
+  `idMapel` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `questionnaire`
+-- Dumping data for table `kontrak`
 --
 
-INSERT INTO `questionnaire` (`id`, `course_id`, `lesson_id`, `right_answer`, `title`, `answer_1`, `answer_2`, `answer_3`, `answer_4`, `status`) VALUES
-(1, 1, 1, 4, 'Which of the following is not OOPS concept in Java?', 'Inheritance', 'Encapsulation', 'Polymorphism', 'Inheritance', 1),
-(2, 1, 1, 4, 'What is it called if an object has its own lifecycle and there is no owner?', 'Aggregation', 'Composition', 'Encapsulation', 'Association', 1),
-(3, 1, 1, 3, 'Which concept of Java is a way of converting real world objects in terms of class?', 'Polymorphism', 'Encapsulation', 'Abstraction', 'Inheritance', 1),
-(4, 1, 1, 1, 'Which of these values can a boolean variable contain?', 'True & False', '0 & 1', 'Any integer value', 'true', 1),
-(5, 1, 1, 1, 'Which one is a valid declaration of a boolean?', 'boolean b1 = 1;', 'boolean b1 = \"false\";', 'boolean b1 = false;', 'boolean b1 = \"true\";', 1),
-(6, 1, 1, 1, 'Which of these is used to perform all input & output operations in Java?', 'streams', 'Variables', 'classes', 'Methods', 1);
+INSERT INTO `kontrak` (`idKontrak`, `idKelas`, `idMapel`) VALUES
+(9, 1, 'FIK-01'),
+(10, 1, 'FIK-02'),
+(11, 1, 'FIK-03'),
+(12, 1, 'FIK-04'),
+(13, 1, 'FIK-05'),
+(14, 1, 'FIK-07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mapel`
+--
+
+CREATE TABLE `mapel` (
+  `idMapel` varchar(10) NOT NULL,
+  `namaMapel` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `mapel`
+--
+
+INSERT INTO `mapel` (`idMapel`, `namaMapel`) VALUES
+('FIK-01', 'Keamanan Informasi'),
+('FIK-02', 'Keamanan Jaringan'),
+('FIK-03', 'Algoritma'),
+('FIK-04', 'Object Oriented Programming'),
+('FIK-05', 'Pemrograman Web1'),
+('FIK-06', 'Pemrograman Web2'),
+('FIK-07', 'Pemrograman Mobile1'),
+('FIK-08', 'Pemrograman Mobile2'),
+('FIK-10', 'FCNS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `materi`
+--
+
+CREATE TABLE `materi` (
+  `idMateri` int(10) NOT NULL,
+  `idGuru` int(10) NOT NULL,
+  `judulFile` text NOT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `lokasiFile` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nilai`
+--
+
+CREATE TABLE `nilai` (
+  `idNilai` int(10) NOT NULL,
+  `idSiswa` int(10) NOT NULL,
+  `idGuru` int(10) NOT NULL,
+  `jenis` varchar(10) NOT NULL,
+  `nilai` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `idSiswa` int(10) NOT NULL,
+  `idKelas` int(10) NOT NULL,
+  `NIS` varchar(30) NOT NULL,
+  `namaSiswa` varchar(35) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `alamatSiswa` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`idSiswa`, `idKelas`, `NIS`, `namaSiswa`, `password`, `alamatSiswa`) VALUES
+(1, 1, '205520110001', 'Siswa1', 'Siswa123', 'Bojongsoang 11');
 
 -- --------------------------------------------------------
 
@@ -444,8 +487,8 @@ CREATE TABLE `tb_kelas` (
 
 INSERT INTO `tb_kelas` (`id`, `faculty_id`, `program_id`, `semester_id`, `nama`, `kelas`, `activity`, `total`) VALUES
 (27, 'IF', 'PR2', 'S1', 'DEDI ROSADI', '1-IF-B', '4', '40'),
-(28, 'SI', 'PR1', 'S3', 'ANNISA ADITSANIA', '1-IF-C', '3', '30'),
-(29, 'CS', 'PR4', 'S4', 'ANAK AGUNG GEDE', '4-IF-D', '2', '20');
+(28, 'SI', 'PR1', 'S3', 'ANNISA ADITSANIA', '1-IF-C', '10', '30'),
+(29, 'CS', 'PR4', 'S4', 'ANAK AGUNG GEDE', '4-IF-D', '60', '10');
 
 -- --------------------------------------------------------
 
@@ -465,9 +508,10 @@ CREATE TABLE `tb_nilai` (
 --
 
 INSERT INTO `tb_nilai` (`IdMhsw`, `Nama`, `UTS`, `UAS`) VALUES
-(16, 'Keamanan Jaringan', '97', '94'),
-(17, 'System Mikroprocessor', '98', '98'),
-(18, 'System Mikrokontroller', '96', '99');
+(16, 'Keamanan Jaringan', '97', '0'),
+(17, 'System Mikroprocessor', '98', '0'),
+(18, 'System Mikrokontroller', '96', '0'),
+(0, 'Keamanan Informasi', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -579,7 +623,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_pegawai`, `nama_lengkap`, `username`, `password`, `role_id`, `umur`, `image`, `qr_code_image`, `kode_pegawai`, `instansi`, `jabatan`, `npwp`, `tgl_lahir`, `tempat_lahir`, `jenis_kelamin`, `bagian_shift`, `is_active`, `qr_code_use`, `last_login`, `date_created`) VALUES
-(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672367943, 1670857167),
+(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672802215, 1670857167),
 (47, 'Dedi Rosadi', 'dedi', '$2y$10$XRXong6z3evF2IG41qanPud4..ii8C/0rO/Ypr9f4MAGzS1qbNe6.', 2, 21, '24eba96bab2559d9b4fea156554f1bb1.png', 'qr_code_148296679305713.png', '148296679305713', 'TELKOM UNIVERSITY', '21552011076', '2020', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1672192169, 1671366109);
 
 -- --------------------------------------------------------
@@ -604,160 +648,65 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `activity`
---
-ALTER TABLE `activity`
-  ADD PRIMARY KEY (`Id`);
-
---
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`users`);
+  ADD PRIMARY KEY (`idAdmin`);
 
 --
--- Indexes for table `agenda`
+-- Indexes for table `guru`
 --
-ALTER TABLE `agenda`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `guru`
+  ADD PRIMARY KEY (`idGuru`),
+  ADD KEY `fk_idMapel` (`idMapel`);
 
 --
--- Indexes for table `app_user`
+-- Indexes for table `kelas`
 --
-ALTER TABLE `app_user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`idKelas`);
 
 --
--- Indexes for table `calendar`
+-- Indexes for table `kontrak`
 --
-ALTER TABLE `calendar`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `kontrak`
+  ADD PRIMARY KEY (`idKontrak`),
+  ADD KEY `fk_idKelas` (`idKelas`),
+  ADD KEY `fk_idMapel1` (`idMapel`);
 
 --
--- Indexes for table `course`
+-- Indexes for table `mapel`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `mapel`
+  ADD PRIMARY KEY (`idMapel`);
 
 --
--- Indexes for table `customers`
+-- Indexes for table `materi`
 --
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `faculty_id` (`faculty_id`),
-  ADD UNIQUE KEY `program_id` (`program_id`),
-  ADD UNIQUE KEY `course_id` (`course_id`);
+ALTER TABLE `materi`
+  ADD PRIMARY KEY (`idMateri`),
+  ADD KEY `fk_idGuru` (`idGuru`);
 
 --
--- Indexes for table `db_absensi`
+-- Indexes for table `nilai`
 --
-ALTER TABLE `db_absensi`
-  ADD PRIMARY KEY (`id_absen`);
+ALTER TABLE `nilai`
+  ADD PRIMARY KEY (`idNilai`),
+  ADD KEY `fk_idSiswa` (`idSiswa`),
+  ADD KEY `fk_idGuru1` (`idGuru`);
 
 --
--- Indexes for table `db_rememberme`
+-- Indexes for table `siswa`
 --
-ALTER TABLE `db_rememberme`
-  ADD PRIMARY KEY (`id_session`);
-
---
--- Indexes for table `evaluation_report`
---
-ALTER TABLE `evaluation_report`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lesson`
---
-ALTER TABLE `lesson`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `lesson_course_id_idx` (`course_id`);
-
---
--- Indexes for table `questionnaire`
---
-ALTER TABLE `questionnaire`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `questionnaire_course_id_idx` (`course_id`),
-  ADD KEY `questionnaire_lesson_id_idx` (`lesson_id`);
-
---
--- Indexes for table `tb_activity`
---
-ALTER TABLE `tb_activity`
-  ADD PRIMARY KEY (`activity`);
-
---
--- Indexes for table `tb_faculty`
---
-ALTER TABLE `tb_faculty`
-  ADD PRIMARY KEY (`faculty_id`);
-
---
--- Indexes for table `tb_jadwal`
---
-ALTER TABLE `tb_jadwal`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`idSiswa`),
+  ADD KEY `fk_idKelas1` (`idKelas`);
 
 --
 -- Indexes for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `prodi_id` (`program_id`),
-  ADD UNIQUE KEY `semester_id` (`semester_id`),
-  ADD UNIQUE KEY `activity` (`activity`),
-  ADD UNIQUE KEY `faculty_id` (`faculty_id`),
-  ADD UNIQUE KEY `nama` (`nama`),
-  ADD UNIQUE KEY `kelas` (`kelas`),
-  ADD UNIQUE KEY `total_activity` (`total`);
-
---
--- Indexes for table `tb_nilai`
---
-ALTER TABLE `tb_nilai`
-  ADD PRIMARY KEY (`IdMhsw`);
-
---
--- Indexes for table `tb_prodi`
---
-ALTER TABLE `tb_prodi`
-  ADD PRIMARY KEY (`program_id`),
-  ADD UNIQUE KEY `faculty_id` (`faculty_id`),
-  ADD UNIQUE KEY `nama` (`nama`),
-  ADD UNIQUE KEY `kelas` (`kelas`);
-
---
--- Indexes for table `tb_semester`
---
-ALTER TABLE `tb_semester`
-  ADD PRIMARY KEY (`semester_id`),
-  ADD UNIQUE KEY `nama` (`nama`) USING BTREE;
-
---
--- Indexes for table `tb_supplier`
---
-ALTER TABLE `tb_supplier`
-  ADD PRIMARY KEY (`id_supplier`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_pegawai`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `faculty_id` (`faculty_id`),
-  ADD UNIQUE KEY `program_id` (`program_id`),
-  ADD UNIQUE KEY `semester_id` (`semester_id`),
-  ADD UNIQUE KEY `kelas` (`kelas`),
-  ADD UNIQUE KEY `nama` (`nama`),
-  ADD UNIQUE KEY `activity` (`activity`),
-  ADD UNIQUE KEY `total` (`total`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -767,118 +716,79 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAdmin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `app_user`
+-- AUTO_INCREMENT for table `guru`
 --
-ALTER TABLE `app_user`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `guru`
+  MODIFY `idGuru` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `calendar`
+-- AUTO_INCREMENT for table `kelas`
 --
-ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+ALTER TABLE `kelas`
+  MODIFY `idKelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `course`
+-- AUTO_INCREMENT for table `kontrak`
 --
-ALTER TABLE `course`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `kontrak`
+  MODIFY `idKontrak` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT for table `materi`
 --
-ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+ALTER TABLE `materi`
+  MODIFY `idMateri` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `db_absensi`
+-- AUTO_INCREMENT for table `nilai`
 --
-ALTER TABLE `db_absensi`
-  MODIFY `id_absen` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `nilai`
+  MODIFY `idNilai` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `db_rememberme`
+-- AUTO_INCREMENT for table `siswa`
 --
-ALTER TABLE `db_rememberme`
-  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `evaluation_report`
---
-ALTER TABLE `evaluation_report`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `lesson`
---
-ALTER TABLE `lesson`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `questionnaire`
---
-ALTER TABLE `questionnaire`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tb_jadwal`
---
-ALTER TABLE `tb_jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tb_kelas`
---
-ALTER TABLE `tb_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT for table `tb_nilai`
---
-ALTER TABLE `tb_nilai`
-  MODIFY `IdMhsw` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `tb_supplier`
---
-ALTER TABLE `tb_supplier`
-  MODIFY `id_supplier` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `siswa`
+  MODIFY `idSiswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `tb_kelas`
+-- Constraints for table `guru`
 --
-ALTER TABLE `tb_kelas`
-  ADD CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`program_id`) REFERENCES `tb_prodi` (`program_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_2` FOREIGN KEY (`semester_id`) REFERENCES `tb_semester` (`semester_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_4` FOREIGN KEY (`kelas`) REFERENCES `tb_prodi` (`kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_5` FOREIGN KEY (`faculty_id`) REFERENCES `tb_prodi` (`faculty_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_6` FOREIGN KEY (`activity`) REFERENCES `tb_activity` (`activity`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_7` FOREIGN KEY (`nama`) REFERENCES `tb_prodi` (`nama`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `guru`
+  ADD CONSTRAINT `fk_idMapel` FOREIGN KEY (`idMapel`) REFERENCES `mapel` (`idMapel`) ON DELETE CASCADE;
 
 --
--- Constraints for table `tb_prodi`
+-- Constraints for table `kontrak`
 --
-ALTER TABLE `tb_prodi`
-  ADD CONSTRAINT `tb_prodi_ibfk_1` FOREIGN KEY (`faculty_id`) REFERENCES `tb_faculty` (`faculty_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `kontrak`
+  ADD CONSTRAINT `fk_idKelas` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_idMapel1` FOREIGN KEY (`idMapel`) REFERENCES `mapel` (`idMapel`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `materi`
+--
+ALTER TABLE `materi`
+  ADD CONSTRAINT `fk_idGuru` FOREIGN KEY (`idGuru`) REFERENCES `guru` (`idGuru`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `nilai`
+--
+ALTER TABLE `nilai`
+  ADD CONSTRAINT `fk_idGuru1` FOREIGN KEY (`idGuru`) REFERENCES `guru` (`idGuru`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_idSiswa` FOREIGN KEY (`idSiswa`) REFERENCES `siswa` (`idSiswa`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD CONSTRAINT `fk_idKelas1` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
