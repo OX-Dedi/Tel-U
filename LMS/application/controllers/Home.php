@@ -16,7 +16,6 @@ class Home extends CI_Controller
 		$this->load->model('Laporan_model','tb_kelas');
 	}
 
-
 	public function index()
 	{
 		if (date("H") < 4) {

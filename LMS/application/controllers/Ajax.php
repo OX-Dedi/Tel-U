@@ -527,8 +527,8 @@ class Ajax extends CI_Controller
                     $r->username,
                     $r->npwp,
                     $r->jenis_kelamin,
-                    ($r->role_id == 1) ? '<span class="badge badge-danger ml-1">Administrator</span>' : (($r->role_id == 2) ? '<span class="badge badge-primary ml-1">Moderator</span>' : (($r->role_id == 3) ? '<span class="badge badge-success ml-1">Pegawai</span>' : '<span class="badge badge-secondary ml-1">Tidak Ada Role</span>')),
-                    ($r->bagian_shift == 1) ? '<span class="badge badge-success ml-1">Full Time</span>' : (($r->bagian_shift == 2) ? '<span class="badge badge-warning">Part Time</span>' : '<span class="badge badge-primary">Shift Time</span>'),
+                    ($r->role_id == 1) ? '<span class="badge badge-danger ml-1">Admini</span>' : (($r->role_id == 2) ? '<span class="badge badge-primary ml-1">Guru</span>' : (($r->role_id == 3) ? '<span class="badge badge-success ml-1">Siswa</span>' : '<span class="badge badge-secondary ml-1">Tidak Ada Role</span>')),
+                    ($r->bagian_shift == 1) ? '<span class="badge badge-success ml-1">Reguler Pagi</span>' : (($r->bagian_shift == 2) ? '<span class="badge badge-warning">Reguler Malam</span>' : '<span class="badge badge-primary">Karyawan</span>'),
                     ($r->is_active == 1) ? '<span class="badge badge-success ml-1">Terverifikasi</span>' : '<span class="badge badge-danger ml-1">Belum Terverifikasi</span>',
                     (($query->num_rows() > 1 && $r->role_id != 1) || $check_admin->num_rows() > 1) ?
                         '<div class="btn-group btn-small " style="text-align: right;">

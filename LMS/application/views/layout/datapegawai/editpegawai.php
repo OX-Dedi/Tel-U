@@ -1,4 +1,4 @@
-<?= form_open_multipart('#', ['id' => 'editpegawai']) ?>
+<?= form_open_mulfetchtipart('#', ['id' => 'editpegawai']) ?>
 <input type="hidden" name="id_pegawai_edit" id="id_pegawai_edit" value="<?= $datapegawai['id_pegawai'] ?>">
 <div class="form-group row">
     <label for="nama_pegawai_edit" class="col-sm-4 col-form-label">Nama Mahasiswa</label>

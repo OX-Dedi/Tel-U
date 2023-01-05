@@ -16,7 +16,7 @@
 
         </div>
         <div class="card-footer text-muted">
-          2018 &copy; SPOT. All rights reserved
+        2023 Pembelajaran Online Terpadu
         </div>
       </div>
     </div>

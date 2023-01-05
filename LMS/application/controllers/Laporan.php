@@ -78,12 +78,7 @@ class Laporan extends CI_Controller {
         $this->load->view('layout/sidebar', $data);
 		$this->load->view('laporan/laporan_view',$data);
         $this->load->view('layout/footer', $data);
-
-
-
 	}
-
-	
 
 	public function ajax_list()
 	{

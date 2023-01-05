@@ -23,7 +23,7 @@
                         </a><div class="sb-sidenav-menu-heading text-white">Course</div>
                         </a><a class="nav-link" href="<?= base_url('Index/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-search text-white"></span></div>
-                            Tes  Course
+                            Management Learning
                           </a>        
                           <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
                         </a><a class="nav-link" href="<?= base_url('home/index'); ?>">
